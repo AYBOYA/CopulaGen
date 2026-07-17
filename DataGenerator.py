@@ -14,6 +14,9 @@ class DataGenerator:
         self.points = []
         self.noise = noise
     
+    def add_points(self, points : list[Point.Point]) -> None:
+        self.points = self.points + points
+    
     def generate_noise(self, values : tuple) -> list:
         noise_coefficients = [random.random() - 0.5 for i in range(self.dimensions)]
         noise_values = np.multiply(noise_coefficients, self.noise)
